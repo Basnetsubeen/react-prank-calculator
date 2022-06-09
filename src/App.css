@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.wrapper {
+  background: linear-gradient(
+    2.35deg,
+    #8089d6 1.48%,
+    rgba(27, 239, 226, 0) 102.84%,
+    rgba(12, 14, 14, 0.0520833) 102.84%
+  );
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+  display: grid;
+  justify-items: center;
   align-items: center;
+}
+.calculator {
+  background: linear-gradient(
+    181.46deg,
+    #eee859 1.24%,
+    rgba(193, 57, 215, 0) 114.49%
+  );
+  width: 600px;
+  height: 45rem;
+  backdrop-filter: blur (12px);
+  border-radius: 10px;
+  padding: 2rem;
+
+  position: relative;
+}
+/* display area */
+.display {
+  background: rgba(255, 255, 255, 0.921);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+
+  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.823);
+  color: black;
+  font-weight: bolder;
+  text-align: end;
+  overflow: hidden;
+}
+/* button area */
+
+.btn-area {
+  display: grid;
+  /* gap for x-axis and y-axis */
+  gap: 1rem;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+.btn-area > div {
+  background: #a8dad9;
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 2rem 0;
+  border-radius: 2px;
+  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.823);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-0 {
+  grid-column: 2/4;
 }
+.btn-ans {
+  grid-row: 4/6;
+  grid-column: 4/5;
+}
+.circle {
+  background: linear-gradient(rgb(234, 67, 49), rgb(196, 234, 41));
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  bottom: calc(50% - 450px);
+  left: calc(50% - 390px);
+
+  /* bottom: 10vh; */
+
+  position: absolute;
+}
+.btn-area > div:hover {
+  cursor: pointer;
 }
