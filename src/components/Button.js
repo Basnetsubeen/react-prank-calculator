@@ -1,5 +1,9 @@
 import React from "react";
 
-export const Button = ({ clsNm, label }) => {
-  return <div className={clsNm}>{label}</div>;
+export const Button = ({ clsNm, label, handleOnClick }) => {
+  return (
+    <div className={clsNm} onClick={() => handleOnClick(label)}>
+      {label}
+    </div>
+  );
 };

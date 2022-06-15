@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./Button";
 
-export const ButtonArea = () => {
+export const ButtonArea = ({ handleOnClick }) => {
   const buttons = [
     {
       label: "AC",
@@ -79,7 +79,14 @@ export const ButtonArea = () => {
   return (
     <div className="btn-area">
       {buttons.map((item, i) => {
-        return <Button key={i} label={item.label} clsNm={item.clsNm} />;
+        return (
+          <Button
+            key={i}
+            label={item.label}
+            clsNm={item.clsNm}
+            handleOnClick={handleOnClick}
+          />
+        );
 
         // Destructuring and we can replace above code with below code
         // return <Button key={i} {...item} />;
